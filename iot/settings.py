@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-ysx08y*)0o-(ois1cz9&$#&w702x14ctjwfn-47&@1_exbp%gs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "horologically-ravishing-cristian.ngrok-free.dev"]
+ALLOWED_HOSTS = ["localhost", "horologically-ravishing-cristian.ngrok-free.dev", "iot.internal.ripeseed.io"]
 
 
 # Application definition
