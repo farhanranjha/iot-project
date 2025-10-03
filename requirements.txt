@@ -1,8 +1,10 @@
+Django==5.2.7
+djangorestframework==3.16.1
+django-cors-headers==4.3.1
+gunicorn==21.2.0
 asgiref==3.9.2
 black==25.9.0
 click==8.3.0
-Django==5.2.7
-djangorestframework==3.16.1
 isort==6.1.0
 mypy_extensions==1.1.0
 packaging==25.0
