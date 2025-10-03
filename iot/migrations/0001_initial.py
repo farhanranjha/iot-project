@@ -7,19 +7,26 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='IoTData',
+            name="IoTData",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('device_tag', models.CharField(max_length=255)),
-                ('random_number', models.IntegerField()),
-                ('data', models.JSONField()),
-                ('timestamp', models.DateTimeField()),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("device_tag", models.CharField(max_length=255)),
+                ("random_number", models.IntegerField()),
+                ("data", models.JSONField()),
+                ("timestamp", models.DateTimeField()),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class IoTData(models.Model):
     device_tag = models.CharField(max_length=255)
     random_number = models.IntegerField()
@@ -11,6 +12,6 @@ class IoTData(models.Model):
         return self.device_tag
 
     class Meta:
-        verbose_name = 'IoT Data'
-        verbose_name_plural = 'IoT Data'
-        ordering = ['-created_at']
+        verbose_name = "IoT Data"
+        verbose_name_plural = "IoT Data"
+        ordering = ["-created_at"]
