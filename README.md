@@ -109,7 +109,7 @@ The ESP32 has been running continuously for extended periods, providing real-tim
 
 ## API Endpoint
 
-**POST** `https://iot.internal.writesheet.io/iot/`
+**POST** `https://iot.internal.ripeseed.io/iot/`
 
 **Request Body**:
 
