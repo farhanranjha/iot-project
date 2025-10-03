@@ -3,7 +3,9 @@ set -e
 
 echo "=== Starting IoT Project Deployment ==="
 cd /app
+
 mkdir -p staticfiles
+mkdir -p data
 
 echo "=== Running migrations ==="
 python manage.py migrate --noinput
