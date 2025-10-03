@@ -10,6 +10,7 @@ API_URL = "https://iot.internal.ripeseed.io/iot/"
 DEVICE_TAG = "myesp"
 SEND_INTERVAL = 5
 
+led = machine.Pin(2, machine.Pin.OUT)
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 
@@ -31,6 +32,18 @@ def connect_wifi(timeout=20):
     print("Wi-Fi connected")
     return True
 
+def blink_led(success=True, blink_count=3):
+    if success:
+        # Blink LED 3 times quickly for success
+        for _ in range(blink_count):
+            led.on()
+            time.sleep_ms(200)
+            led.off()
+            time.sleep_ms(200)
+    else:
+        # Keep the LED on for failure for 2
+        led.on()
+        time.sleep_ms(2000)
 
 def send_data():
     try:
@@ -59,16 +72,20 @@ def send_data():
         
         if response.status_code == 200 or response.status_code == 201:
             print("Data sent successfully")
+            blink_led(success=True)
             response.close()
             return True
         else:
             print("Server error:", response.status_code)
+            blink_led(success=False)
             response.close()
             
     except OSError as e:
         print("Network error:", e)
+        blink_led(success=False)
     except Exception as e:
         print("Request failed:", e)
+        blink_led(success=False)
 
 
 def main():
