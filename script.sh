@@ -1,13 +1,14 @@
 #!/bin/sh
 
 set -e
+
 echo "Starting IoT Project Deployment..."
 
 echo "Making migrations..."
-python3 manage.py makemigrations
+python3 manage.py makemigrations --noinput
 
 echo "Running migrations..."
-python3 manage.py migrate
+python3 manage.py migrate --noinput
 
 echo "Creating superuser if needed..."
 python3 manage.py shell -c "
