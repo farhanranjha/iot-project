@@ -13,4 +13,4 @@ COPY . /app/
 RUN chmod +x /app/script.sh
 EXPOSE 8000
 
-CMD ["./script.sh"]
+CMD ["/app/script.sh"]

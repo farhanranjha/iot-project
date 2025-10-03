@@ -2,12 +2,14 @@
 set -e
 
 echo "=== Starting IoT Project Deployment ==="
+cd /app
+mkdir -p staticfiles
 
 echo "=== Running migrations ==="
-python3 manage.py migrate --noinput || true
+python manage.py migrate --noinput || true
 
 echo "=== Collecting static files ==="
-python3 manage.py collectstatic --noinput || true
+python manage.py collectstatic --noinput || true
 
 echo "=== Starting Gunicorn server ==="
 exec gunicorn iot.wsgi:application \
